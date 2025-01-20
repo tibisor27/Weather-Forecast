@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins, sans-serif';
+    font-style: normal;
+    line-height: normal;
+}
+
+body{
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 auto;
+    width: fit-content;
+    height: 635px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+main.clouds{
+    background-image: url('../img/cloudy.jpeg');
+}
+
+main.sunny{
+    background-image: url('../img/sunny.jpeg');
+}
+
+main.overcast{
+    background-image: url('../img/overcast.jpeg');
+}
+
+main.mist,
+main.Mist,
+main.haze,
+main.smoke{
+    background-image: url('../img/mist.jpeg');
+}
+
+main.rain{
+    background-image: url('../img/rain.jpeg');
+}
+
+main.snow{
+    background-image: url('../img/snow.jpeg');
+}
+
+main.sleet{
+    background-image: url('../img/sleet.jpeg');
+}
+
+main.drizzle{
+    background-image: url('../img/drizzle.jpeg');
+}
+
+main.thunder,
+main.thundery{
+    background-image: url('../img/thunder.jpeg');
+}
+
+main.blizzard{
+    background-image: url('../img/blizzard.jpeg');
+}
+
+main.fog{
+    background-image: url('../img/fog.jpeg');
+}
+
+main.ice{
+    background-image: url('../img/ice.jpeg');
+}
+
+main.shower{
+    background-image: url('../img/shower.jpeg');
+}
+
+main.showers{
+    background-image: url('../img/showers.jpeg');
+}
+
+main.clear{
+    background-image: url('../img/clear.jpeg');
+}
+
+.side-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 250px;
+    padding: 40px;
+    height: 100%;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(22.5px);
+}
+
+/*INPUT*/
+.search-container{
+    width: 100%;
+    padding-bottom: 6px;
+    margin-bottom: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ffffff;
+}
+
+.error-message {
+    color: #eb3f3f;
+    padding: 8px 12px; /* Reducem padding-ul pentru a-l face mai compact */
+    font-weight: bold;
+    font-size: 14px; /* Mărim puțin fontul pentru a fi clar */
+    text-align: center;
+    margin-bottom: px; /* Micșorăm spațiul de sub mesaj */
+    width: 100%; /* Mesajul va ocupa întreaga lățime a containerului */
+}
+
+.geo-input{
+    all:unset;
+    flex: 1;
+    width: 100%;   
+    margin: 0 10px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 13px;
+}
+
+.geo-input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-button{
+    border: none;
+    background: transparent;
+    /* -webkit-animation: none; */
+    height: 22px;
+    cursor: pointer;
+}
+
+/* DAY STATS */
+.day-stats{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    z-index: 2;
+}
+
+.day-stats__temperature{
+    color: #fff;
+    font-size: 50px;
+    line-height: 100%;
+    transition: transform 0.3s ease, color 0.3s ease; /* Tranziție lină */
+}
+.day-stats__temperature:hover {
+    transform: scale(1.1); /* Crește puțin dimensiunea textului la hover */
+    text-shadow: 2px 2px 6px rgba(65, 63, 63, 0.5); /* Umbra mai intensă pentru a crea un efect de îngroșare */
+
+}
+
+.day-stats__temperature_value{
+    line-height: 100%;
+}
+
+.day-stats__feelslike{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 6px;
+    margin-top: 9px;
+    transition: transform 0.3s ease, color 0.3s ease; /* Tranziție lină */
+}
+
+.day-stats__feelslike_value {
+    display: inline-block; /* Permite utilizarea transform */
+
+    transition: transform 0.3s ease, color 0.3s ease; /* Tranziție lină */
+}
+
+.day-stats__feelslike_value:hover {
+    transform: scale(1.1); /* Mărește puțin dimensiunea la hover */
+}
+
+.day-stats_conditions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.day-stats_conditions li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.day-stats_condition{
+    color: #fff;
+    font-size: 24px;
+    line-height: 100%;
+}
+
+.day-stats__condition_text{
+    color: #fff;
+    font-size: 13px;
+}
+
+/* MAIN CONTAINER */
+.main-container{
+    position: relative;
+    width: calc(1079px - 259px);
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 75px;
+    background-image: url('../img/main-blur.png');
+}
+
+.secondary-title{
+    margin-bottom: 17px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.weather__primary-title {
+    margin-bottom: 16px;
+    color: #fff;
+    font-size: 38px;
+    line-height: 100%;
+    letter-spacing: -1.9px;
+    font-weight: 600; /* Greutate mai mare decât normal */
+    transition: font-weight 0.3s ease, text-shadow 0.3s ease; /* Tranziție lină pentru font-weight și text-shadow */
+}
+
+.weather__primary-title:hover {
+    font-weight: 900; /* Îngroșează fontul la hover */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Umbra mai intensă pentru a crea un efect de îngroșare */
+}
+
+
+
+.weather__location{
+    display: flex;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.location-icon{
+    margin-right: 8px;
+    margin-bottom: 7px;
+}
+
+.weather__location-text {
+    color: #fff;
+    font-size: 13px;
+    transition: font-weight 0.3s ease, text-shadow 0.3s ease; /* Tranziție lină pentru font-weight și text-shadow */
+}
+
+.weather__location-text:hover {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Umbra mai intensă pentru a crea un efect de îngroșare */
+}
+
+
+
+.weather-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Spațiu între carduri */
+    width: 100%;
+    list-style: none;
+    padding: 10px;
+}
+
+.weather-stats-item {
+    width: 200px; /* Lățime fixă pentru carduri, poate fi ajustată după preferințe */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aliniere la stânga */
+    justify-content: flex-start; /* Aliniere la stânga */
+    background: rgba(255, 255, 255, 0.2); /* Fundal translucid */
+    border-radius: 12px; /* Colțuri rotunjite */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Umbră subtilă */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efect la hover */
+    position: relative; /* Adaugă context pentru poziționarea absolută a iconiței */
+}
+
+.weather-stats-item:hover {
+    transform: translateY(-5px); /* Ridică cardul */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Umbră mai intensă */
+}
+
+/* Iconița pentru locație, poziționată în colțul stânga sus */
+.weather-stats-item .location-icon {
+    position: absolute; /* Permite poziționarea în afacerea părinte */
+    top: 9px; /* Mută iconița mai sus */
+    left: 9px; /* Mută iconița mai la stânga */
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}
+
+/* Titlul pentru card, poziționat în stânga sus */
+.weather-stats-title {
+    position: absolute; /* Permite poziționarea absolută în cadrul cardului */
+    top: 8px; /* Ajustează acestă valoare pentru a muta titlul mai sus sau mai jos */
+    left: 30px; /* Ajustează această valoare pentru a muta titlul mai la stânga sau la dreapta */
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 4px;
+    /* text-align: left; dacă vrei să aliniezi la stânga, dar nu este necesar dacă folosești `position: absolute` */
+}
+
+
+/* Valoarea din mijlocul cardului */
+.weather-stats-value {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left; /* Aliniere la stânga */
+    margin-top: 28px; /* Adaugă distanță între titlu și valoare */
+}
+
+
+
+
+
+/* FORECAST STATS */
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+    align-items: center; /* Asigură alinierea verticală */
+
+}
+
+.forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Fixează poziționarea conținutului */
+    padding: 10px;
+    border-radius: 12px;
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Efecte pentru chenar și umbră */
+    position: relative; /* Asigură efectele fără să afecteze fluxul documentului */
+    border: 2px solid transparent; /* Rezervă spațiu pentru border */
+
+
+}
+
+.forecast-item:hover {
+    transform: translateY(-5px); /* Ridică elementul în sus */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Chenar transparent */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Umbră subtilă pentru efect de hover */
+}
+
+.forecast-item:hover .forecast-time,
+.forecast-item:hover .forecastWindText,
+.forecast-item:hover .forecast-temperature {
+    transform: scale(1.05); /* Crește puțin dimensiunea textului */
+    font-weight: 600; /* Îngroașă textul */
+}
+
+.forecast-time {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 4px;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+
+}
+
+.forecastWindText {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+
+.forecast-temperature {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 100%;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+
+.bi-geo-alt {
+    display: inline-block;
+    color: #fff; /* Păstrează culoarea inițială */
+    font-size: 18px; /* Dimensiunea inițială */
+    transition: transform 0.3s ease; /* Tranziție lină doar pentru dimensiune */
+}
+
+.bi-geo-alt:hover {
+    transform: scale(1.2); /* Mărește iconița doar la hover */
+}
+
+#chart{
+    margin: 30px auto 30px;
+    width: 100%;
+}
