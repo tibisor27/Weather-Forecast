@@ -22,5 +22,6 @@ The main goal of this project was to learn about prediction models in AI, specif
 - **Data Scaling**: StandardScaler (scikit-learn)
 - **Model Training**: scikit-learn, PyTorch
 
+
 ![WebSite](weatherProject/forecast/static/img/test.png)
 
